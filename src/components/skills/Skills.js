@@ -21,6 +21,70 @@ const skills = [
     name: "CSS",
     logo: "https://img.icons8.com/stickers/100/css3.png",
   },
+  {
+    name: "tailwindcss",
+    logo: "https://img.icons8.com/color/48/tailwindcss.png",
+  },
+  {
+    name: "bootstrap",
+    logo: "https://img.icons8.com/color-glass/48/bootstrap.png",
+  },
+  {
+    name: "NextJs",
+    logo: "https://img.icons8.com/nolan/64/nextjs.png",
+  },
+  {
+    name: "NodeJs",
+    logo: "https://img.icons8.com/fluency/48/node-js.png",
+  },
+  {
+    name: "ExpressJs",
+    logo: "https://img.icons8.com/nolan/64/express-js.png",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://img.icons8.com/nolan/64/mongo-db.png",
+  },
+  {
+    name: "MySQL",
+    logo: "https://img.icons8.com/color/48/mysql-logo.png",
+  },
+  {
+    name: "Firebase",
+    logo: "https://img.icons8.com/color/48/firebase.png",
+  },
+  {
+    name: "Git",
+    logo: "https://img.icons8.com/color/48/git.png",
+  },
+  {
+    name: "GitHub",
+    logo: "https://img.icons8.com/nolan/64/github.png",
+  },
+  {
+    name: "Postman",
+    logo: "https://img.icons8.com/dusk/64/postman-api.png",
+  },
+  {
+    name: "ChartJs",
+    logo: "https://www.chartjs.org/img/chartjs-logo.svg",
+  },
+  {
+    name: "Java",
+    logo: "https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png",
+  },
+  {
+    name: "Dart",
+    logo: "https://img.icons8.com/color/48/dart.png",
+  },
+  {
+    name: "C",
+    logo: "https://img.icons8.com/color/48/c-programming.png",
+  },
+  {
+    name: "C++",
+    logo: "https://img.icons8.com/fluency/48/c-plus-plus-logo.png",
+  },
 ];
 
 const Skills = () => {
