@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Skills.module.css";
 
 const skills = [
@@ -92,7 +93,9 @@ const Skills = () => {
     <div className={styles.skillsContainer}>
       {skills.map((skill) => (
         <div className={styles.skillCard} key={skill.name}>
-          <img
+          <Image
+            width={20}
+            height={20}
             src={skill.logo}
             alt={`${skill.name} logo`}
             className={styles.skillLogo}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import profileImg from "@/assets/img/portfolio.png";
 import Skills from "@/components/skills/Skills";
+import Projects from "@/components/projects/Projects";
 
 const HomePage = () => {
   return (
@@ -64,6 +65,13 @@ const HomePage = () => {
           My <span className="text-warning">Skills</span>
         </h1>
         <Skills></Skills>
+      </div>
+      {/* Projects */}
+      <div className="my-5">
+        <h1 className="text-xl font-bold lg:text-2xl text-center">
+          My <span className="text-warning">Projects</span>
+        </h1>
+        <Projects></Projects>
       </div>
     </div>
   );
