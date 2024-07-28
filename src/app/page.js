@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profileImg from "@/assets/img/portfolio.png";
+import aboutImg from "@/assets/img/aboutPhoto.jpg";
 import Skills from "@/components/skills/Skills";
 import Projects from "@/components/projects/Projects";
 import Contact from "@/components/contact/Contact";
@@ -42,7 +43,7 @@ const HomePage = () => {
           <Image
             priority={false}
             className="bg-white hidden lg:block rounded-xl mt-16 lg:mr-8  border-l-4 border-b-4 border-warning    "
-            src={profileImg}
+            src={aboutImg}
             width={300}
             height={250}
             alt="portfolio image"
