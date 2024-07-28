@@ -1,17 +1,35 @@
 "use client";
-import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import { FiSend } from "react-icons/fi";
 import Lottie from "react-lottie";
 import contactAnimation from "@/assets/img/svg/contact.json";
-import { useEffect } from "react";
-const Contact = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import ReactTypingEffect from "react-typing-effect";
 
-  const onSubmit = (data) => {
-    console.log(data.fname);
+const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_NEXT_SERVICE_KEY,
+        process.env.NEXT_PUBLIC_NEXT_TEMPLATE_KEY,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_NEXT_EMAILJS_PUB_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          toast.success("Message Sent!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          toast.error("Message Send Fail.");
+        }
+      );
   };
 
   const defaultOptions = {
@@ -26,16 +44,21 @@ const Contact = () => {
   return (
     <div>
       <h1 className="text-center text-xl font-bold lg:text-3xl">
-        Get In Touch
+        <ReactTypingEffect
+          speed={200}
+          text={["Get In Touch"]}
+        ></ReactTypingEffect>
       </h1>
-      <div className="flex justify-center mt-6  ">
-        <div className="hidden items-center lg:block">
-          <Lottie options={defaultOptions} height={300} width={300}></Lottie>
+      <div className="flex justify-center gap-5 mt-6  ">
+        <div className="hidden items-center -mt-6 lg:block">
+          <Lottie options={defaultOptions} height={400} width={400}></Lottie>
         </div>
         <div>
-          <form>
+          <form ref={form} onSubmit={sendEmail}>
             <div>
               <input
+                required
+                name="name"
                 type="text"
                 placeholder="Name"
                 className="input input-bordered sm:w-auto lg:w-96 my-3 "
@@ -44,6 +67,8 @@ const Contact = () => {
 
             <div>
               <input
+                required
+                name="email"
                 type="email"
                 placeholder="Email"
                 className="input input-bordered sm:w-auto lg:w-96 my-3  "
@@ -52,14 +77,24 @@ const Contact = () => {
 
             <div>
               <textarea
+                required
+                name="message"
                 className="textarea textarea-bordered sm:w-auto lg:w-96"
                 placeholder="Message"
               ></textarea>
             </div>
-            <input type="submit" className="btn btn-secondary" />
+
+            <button
+              type="submit"
+              className="btn btn-outline w-full btn-warning mt-4"
+            >
+              <FiSend />
+              Send
+            </button>
           </form>
         </div>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
