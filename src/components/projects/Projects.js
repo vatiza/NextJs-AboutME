@@ -7,10 +7,10 @@ const Projects = () => {
     <div className="py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
-          <div className="md:flex-1 px-4">
+          <div className="md:flex-col-reverse px-4">
             <div className=" rounded-lg  mb-4">
               <Image
-              priority={false}
+                priority={false}
                 src={rafsanMock}
                 className="object-cover transition-transform duration-300 hover:scale-105 "
                 alt="rafsan tours and travelsbd"
@@ -28,11 +28,11 @@ const Projects = () => {
               The site aims to provide a comprehensive travel experience for its
               users.
             </p>
-
             <RafsanTravels></RafsanTravels>
           </div>
         </div>
       </div>
+      {/* TODO: --------------Project 2----------------- */}
     </div>
   );
 };
