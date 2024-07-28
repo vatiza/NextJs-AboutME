@@ -1,17 +1,21 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const navOption = (
     <>
       <li>
-        <Link href="">Home</Link>
+        <Link href="/">Home</Link>
       </li>
       <li>
-        <Link href="">About</Link>
+        <Link to="about" smooth={true} duration={500}>
+          About
+        </Link>
       </li>
       <li>
-        <Link href="">Service</Link>
+        <Link to="projects" smooth={true} duration={500}>
+          Projects
+        </Link>
       </li>
       <li>
         <Link href="">Resume</Link>
@@ -20,7 +24,7 @@ const Navbar = () => {
         <Link href="">Blog</Link>
       </li>
       <li>
-        <Link href="">Contact</Link>
+        <Link href="/contact">Contact</Link>
       </li>
     </>
   );

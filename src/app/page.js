@@ -32,7 +32,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* About me */}
-      <div className="mt-10 flex justify-between gap-4 lg:mx-32  ">
+      <div id="about" className="mt-10 flex justify-between gap-4 lg:mx-32  ">
         <div>
           <Image
             className="bg-white rounded-xl mt-16 lg:mr-8  border-l-8 border-b-4 border-warning    "
@@ -67,7 +67,7 @@ const HomePage = () => {
         <Skills></Skills>
       </div>
       {/* Projects */}
-      <div className="my-5">
+      <div id="projects" className="my-5">
         <h1 className="text-xl font-bold lg:text-2xl text-center">
           My <span className="text-warning">Projects</span>
         </h1>
