@@ -32,7 +32,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 fixed top-0  ">
+    <div className="navbar bg-base-100  fixed top-0  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,7 +58,7 @@ const Navbar = () => {
             {navOption}
           </ul>
         </div>
-        <a className="font-bold text-2xl">
+        <a href="/" className="font-bold text-2xl">
           About<span className="text-warning">Me. </span>
         </a>
       </div>

@@ -45,7 +45,8 @@ const Contact = () => {
     <div>
       <h1 className="text-center text-xl font-bold lg:text-3xl">
         <ReactTypingEffect
-          speed={200}
+          speed={150}
+          eraseSpeed={50}
           text={["Get In Touch"]}
         ></ReactTypingEffect>
       </h1>
@@ -79,7 +80,7 @@ const Contact = () => {
               <textarea
                 required
                 name="message"
-                className="textarea textarea-bordered sm:w-auto lg:w-96"
+                className="textarea textarea-bordered w-full lg:w-96"
                 placeholder="Message"
               ></textarea>
             </div>
