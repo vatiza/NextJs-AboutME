@@ -94,6 +94,7 @@ const Skills = () => {
       {skills.map((skill) => (
         <div className={styles.skillCard} key={skill.name}>
           <Image
+            priority={false}
             width={20}
             height={20}
             src={skill.logo}

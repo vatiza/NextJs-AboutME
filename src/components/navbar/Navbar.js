@@ -5,31 +5,34 @@ const Navbar = () => {
   const navOption = (
     <>
       <li>
-        <Link href="/">Home</Link>
+        <Link to="hero" smooth={true} offset={-110} duration={500}>
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="about" smooth={true} duration={500}>
+        <Link to="about" smooth={true} offset={-100} duration={500}>
           About
         </Link>
       </li>
       <li>
-        <Link to="projects" smooth={true} duration={500}>
+        <Link to="skills" smooth={true} offset={-100} duration={500}>
+          Skills
+        </Link>
+      </li>
+      <li>
+        <Link to="projects" smooth={true} offset={-100} duration={500}>
           Projects
         </Link>
       </li>
       <li>
-        <Link href="">Resume</Link>
-      </li>
-      <li>
-        <Link href="">Blog</Link>
-      </li>
-      <li>
-        <Link href="/contact">Contact</Link>
+        <Link to="contact" smooth={true} offset={-100} duration={500}>
+          Contact
+        </Link>
       </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 fixed top-0  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,8 +62,8 @@ const Navbar = () => {
           About<span className="text-warning">Me. </span>
         </a>
       </div>
-      <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navOption}</ul>
+      <div className="navbar-end hidden lg:flex mr-24">
+        <ul className="menu menu-horizontal z-[1] px-1">{navOption}</ul>
       </div>
     </div>
   );

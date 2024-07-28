@@ -10,6 +10,7 @@ const Projects = () => {
           <div className="md:flex-1 px-4">
             <div className=" rounded-lg  mb-4">
               <Image
+              priority={false}
                 src={rafsanMock}
                 className="object-cover transition-transform duration-300 hover:scale-105 "
                 alt="rafsan tours and travelsbd"
