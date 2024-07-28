@@ -14,8 +14,8 @@ const HomePage = () => {
     <div className="mx-3 lg:mx-0" id="hero">
       <div className="mt-10 flex gap-4 justify-between ">
         <div className="w-[466px] lg:mt-14">
-          <h1 className="text-warning my-1">Hello,Welcome</h1>
-          <h2 className="text-3xl font-bold my-2">I am Rakibur Rahman</h2>
+          <h1 className="text-warning my-1">Hello,</h1>
+          <h2 className="text-3xl font-bold my-2">I Am Rakibur Rahman</h2>
           <p className="font-light">
             I am a dedicated web and app developer with extensive knowledge of
             programming. I specialize in creating innovative and efficient
@@ -54,8 +54,8 @@ const HomePage = () => {
             About <span className="text-warning">Me</span>
           </h1>
 
-          <p className="font-semibold  flex items-center">
-            <PiStudent className="text-warning " />
+          <p className="font-semibold  text-warning flex items-center">
+            <PiStudent className=" me-1" />
             Education
           </p>
           <p className="font-light">
@@ -64,8 +64,8 @@ const HomePage = () => {
             journey is providing me with a solid foundation in programming,
             software development, and problem-solving skills.
           </p>
-          <p className="font-semibold flex items-center">
-            <GoGoal className="text-warning" />
+          <p className="font-semibold flex items-center text-warning">
+            <GoGoal className=" me-1" />
             Personal Interests
           </p>
           <p className="font-light">

@@ -11,6 +11,10 @@ const skills = [
     logo: "https://img.icons8.com/color/48/javascript--v1.png",
   },
   {
+    name: "NextJs",
+    logo: "https://img.icons8.com/nolan/64/nextjs.png",
+  },
+  {
     name: "Flutter",
     logo: "https://img.icons8.com/color/48/flutter.png",
   },
@@ -30,10 +34,7 @@ const skills = [
     name: "bootstrap",
     logo: "https://img.icons8.com/color-glass/48/bootstrap.png",
   },
-  {
-    name: "NextJs",
-    logo: "https://img.icons8.com/nolan/64/nextjs.png",
-  },
+
   {
     name: "NodeJs",
     logo: "https://img.icons8.com/fluency/48/node-js.png",

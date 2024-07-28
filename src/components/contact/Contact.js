@@ -3,31 +3,38 @@ import toast, { Toaster } from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import Lottie from "react-lottie";
 import contactAnimation from "@/assets/img/svg/contact.json";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReactTypingEffect from "react-typing-effect";
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    const loadingToastId = toast.loading("Sending message...");
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_NEXT_SERVICE_KEY,
-        process.env.NEXT_PUBLIC_NEXT_TEMPLATE_KEY,
+        process.env.NEXT_PUBLIC_SERVICE_KEY,
+        process.env.NEXT_PUBLIC_TEMPLATE_KEY,
         form.current,
         {
-          publicKey: process.env.NEXT_PUBLIC_NEXT_EMAILJS_PUB_KEY,
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUB_KEY,
         }
       )
       .then(
         () => {
+          toast.dismiss(loadingToastId);
+
           console.log("SUCCESS!");
           toast.success("Message Sent!");
+          setIsLoading(false);
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          toast.dismiss(loadingToastId);
           toast.error("Message Send Fail.");
+          setIsLoading(false);
         }
       );
   };
