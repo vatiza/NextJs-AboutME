@@ -2,7 +2,7 @@ import BlogNavbar from "@/components/blogs/navbar/BlogNavbar";
 
 const layouts = ({ children }) => {
   return (
-    <div className="max-h-svh ">
+    <div className="h-screen max-h-svh ">
       <BlogNavbar />
       {children}
     </div>

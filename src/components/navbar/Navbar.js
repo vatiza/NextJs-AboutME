@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
+
   const navOption = (
     <>
       <li>
