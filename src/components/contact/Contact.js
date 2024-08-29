@@ -1,10 +1,10 @@
 "use client";
+import contactAnimation from "@/assets/svg/contact.json";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import Lottie from "react-lottie";
-import contactAnimation from "@/assets/img/svg/contact.json";
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import ReactTypingEffect from "react-typing-effect";
 
 const Contact = () => {
@@ -58,8 +58,8 @@ const Contact = () => {
         ></ReactTypingEffect>
       </h1>
       <div className="flex justify-center gap-5 mt-6  ">
-        <div className="hidden items-center -mt-6 lg:block">
-          <Lottie options={defaultOptions} height={400} width={400}></Lottie>
+        <div className="hidden items-center mt-6 lg:block ">
+          <Lottie options={defaultOptions} height={200} width={400}></Lottie>
         </div>
         <div>
           <form ref={form} onSubmit={sendEmail}>

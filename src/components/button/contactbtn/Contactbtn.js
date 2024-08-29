@@ -10,7 +10,7 @@ const Contactbtn = () => {
       <Link
         to="contact"
         className="btn btn-warning btn-sm mt-2"
-        smooth={true}
+        smooth="true"
         offset={-100}
         duration={500}
       >
@@ -20,7 +20,7 @@ const Contactbtn = () => {
       <a
         href="https://www.linkedin.com/in/vatiza/"
         className="btn btn-warning btn-sm mt-2"
-        smooth={true}
+        smooth="true"
       >
         <FaLinkedin />
         Linkedin
@@ -29,7 +29,7 @@ const Contactbtn = () => {
       <a
         href="https://github.com/vatiza"
         className="btn btn-warning btn-sm mt-2"
-        smooth={true}
+        smooth="true"
       >
         <FaGithub /> Github
       </a>

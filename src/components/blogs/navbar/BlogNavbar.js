@@ -1,45 +1,16 @@
 "use client";
-import Links from "@/links/Links";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Link } from "react-scroll";
 
-const Navbar = () => {
+const BlogNavbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
+
   const navOption = (
     <>
       <li>
-        <Link to="hero" smooth="true" offset={-110} duration={500}>
-          Home
+        <Link href="/">
+          About <span className="text-warning">Me</span>
         </Link>
-      </li>
-      <li>
-        <Link to="about" smooth="true" offset={-100} duration={500}>
-          About
-        </Link>
-      </li>
-      <li>
-        <Link to="skills" smooth="true" offset={-100} duration={500}>
-          Skills
-        </Link>
-      </li>
-      <li>
-        <Link to="projects" smooth="true" offset={-100} duration={500}>
-          Projects
-        </Link>
-      </li>
-      <li>
-        <Link to="contact" smooth="true" offset={-100} duration={500}>
-          Contact
-        </Link>
-      </li>
-      {/* {pathname != "/blogs" && (
-        <li>
-          <Links />
-        </li>
-      )} */}
-      <li>
-        <Links />
       </li>
     </>
   );
@@ -92,4 +63,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default BlogNavbar;
