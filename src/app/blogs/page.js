@@ -7,9 +7,7 @@ const BlogsPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        "https://portfolio-server-dusky-chi.vercel.app/blogs"
-      );
+      const res = await fetch("https://vatiza-portfolio.vercel.app/blogs");
       const data = await res.json();
       setBlogs(data);
     };
