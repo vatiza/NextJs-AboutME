@@ -15,7 +15,12 @@ const LoadBlogs = () => {
     fetchData();
   }, []);
 
-  if (!blogs) return <div>Loading...</div>;
+  if (!blogs)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-spinner text-warning"></span>
+      </div>
+    );
   return (
     <div>
       <div className="grid grid-flow-row lg:grid-cols-3 gap-4">

@@ -1,8 +1,9 @@
-import React from "react";
+import { SignOutButton } from "@clerk/nextjs";
 
-const adminPage = () => {
+const adminPage = async () => {
   return (
-    <div>
+    <div className="mt-60">
+      <SignOutButton />
       <h1>AdminPage</h1>
     </div>
   );

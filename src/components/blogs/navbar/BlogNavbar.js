@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 
 const BlogNavbar = () => {
-  const pathname = usePathname();
+
 
   const navOption = (
     <>
