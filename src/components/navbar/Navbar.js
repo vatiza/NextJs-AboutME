@@ -74,7 +74,7 @@ const Navbar = () => {
         {pathname == "/blogs" ? (
           <>
             <a href="/" className="font-bold text-2xl">
-              Blog<span className="text-warning">'s</span>
+              Blog<span className="text-warning">&apos;s</span>
             </a>
           </>
         ) : (
