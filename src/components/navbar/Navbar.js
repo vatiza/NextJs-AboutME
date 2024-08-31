@@ -33,11 +33,6 @@ const Navbar = () => {
           Contact
         </Link>
       </li>
-      {/* {pathname != "/blogs" && (
-        <li>
-          <Links />
-        </li>
-      )} */}
       <li>
         <Links />
       </li>
@@ -71,16 +66,16 @@ const Navbar = () => {
             {navOption}
           </ul>
         </div>
-        {pathname == "/blogs" ? (
+        {pathname === "/" ? (
           <>
             <a href="/" className="font-bold text-2xl">
-              Blog<span className="text-warning">&apos;s</span>
+              About<span className="text-warning">Me. </span>
             </a>
           </>
         ) : (
           <>
             <a href="/" className="font-bold text-2xl">
-              About<span className="text-warning">Me. </span>
+              Blog<span className="text-warning">&apos;s</span>
             </a>
           </>
         )}

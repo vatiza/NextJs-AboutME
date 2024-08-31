@@ -7,6 +7,7 @@ const BlogsPage = () => {
         Blog<span className="text-warning">{"'s"}</span>
       </h1>
       <span className="divider"></span>
+
       <LoadBlogs />
     </div>
   );

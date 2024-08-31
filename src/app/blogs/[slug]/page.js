@@ -4,10 +4,6 @@ import Image from "next/image";
 const detailsPage = async ({ params }) => {
   const blog = await getSingleBlogs(params.slug);
 
-  if (!blog) {
-    return <p>Blog not found</p>;
-  }
-
   const { title, postdate, description, img } = blog;
 
   return (
@@ -15,8 +11,8 @@ const detailsPage = async ({ params }) => {
       <div className="card card-compact bg-base-100 w-96 shadow-xl">
         <figure>
           <Image
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
             alt={title}
           />

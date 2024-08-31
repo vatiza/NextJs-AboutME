@@ -6,11 +6,11 @@ const Cards = ({ blog }) => {
 
   return (
     <div>
-      <div className="card card-compact bg-base-100 w-96 shadow-xl">
+      <div className="card card-compact bg-base-100 w-80 shadow-xl">
         <figure>
           <Image
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
             alt={title}
           />
@@ -20,7 +20,7 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
           <p>{description}</p>
-          <p>{postdate}</p>
+          <p>Post: {postdate}</p>
         </div>
       </div>
     </div>
