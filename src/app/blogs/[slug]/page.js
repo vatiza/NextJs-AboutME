@@ -2,9 +2,13 @@ import getSingleBlogs from "@/utils/getSingleBlogs";
 import Image from "next/image";
 
 const detailsPage = async ({ params }) => {
-  const { title, postdate, description, img } = await getSingleBlogs(
-    params.slug
-  );
+  const blog = await getSingleBlogs(params.slug);
+
+  if (!blog) {
+    return <p>Blog not found</p>;
+  }
+
+  const { title, postdate, description, img } = blog;
 
   return (
     <div className="mt-20 flex justify-center">
@@ -14,7 +18,7 @@ const detailsPage = async ({ params }) => {
             width={300}
             height={300}
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Blogs"
+            alt={title}
           />
         </figure>
         <div className="card-body">

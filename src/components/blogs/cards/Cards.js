@@ -1,15 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+
 const Cards = ({ blog }) => {
   const { title, postdate, description, img, _id } = blog;
- 
+
   return (
     <div>
       <div className="card card-compact bg-base-100 w-96 shadow-xl">
         <figure>
-          <Image width={300} height={300}
+          <Image
+            width={300}
+            height={300}
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
+            alt={title}
           />
         </figure>
         <div className="card-body">

@@ -1,7 +1,12 @@
 const getSingleBlogs = async (slug) => {
-  const res = await fetch(`http://localhost:5000/blogs/${slug}`);
-
-  return res.json();
+  const res = await fetch(
+    `https://portfolio-server-dusky-chi.vercel.app/blogs/${slug}`
+  );
+  if (!res.ok) {
+    return null;
+  }
+  const blog = await res.json();
+  return blog;
 };
 
 export default getSingleBlogs;
