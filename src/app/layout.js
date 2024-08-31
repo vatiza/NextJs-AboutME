@@ -13,14 +13,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="lg:mx-20 h-screen max-h-svh">
-          <ClerkProvider>{children}</ClerkProvider>
-          <Footer></Footer>
-        </div>
-        <Analytics />
-      </body>
-    </html>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
+      <html lang="en">
+        <body className={inter.className}>
+          <div className="lg:mx-20 h-screen max-h-svh">
+            {children}
+            <Footer></Footer>
+          </div>
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
