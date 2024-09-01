@@ -4,6 +4,7 @@ import Link from "next/link";
 const AdminSection = async () => {
   const { userId } = auth();
   const user = await currentUser();
+  const emailAddresses = user.emailAddresses[0].emailAddress;
   return (
     <div className="mt-32 sticky top-32">
       <div className="flex flex-col items-center">
@@ -20,9 +21,7 @@ const AdminSection = async () => {
         <h1 className="text-xl font-bold">
           {user.firstName} {user.lastName}
         </h1>
-        <p className="badge badge-secondary badge-outline">
-          {/* {user?.emailAddresses} */}
-        </p>
+        <p className="badge badge-secondary badge-outline">{emailAddresses}</p>
         <div className="divider"></div>
         <div className="">
           <Link
