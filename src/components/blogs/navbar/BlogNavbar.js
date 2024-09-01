@@ -1,10 +1,6 @@
 "use client";
 import Link from "next/link";
-
-
 const BlogNavbar = () => {
-
-
   const navOption = (
     <>
       <li>
@@ -45,8 +41,13 @@ const BlogNavbar = () => {
           Blog<span className="text-warning">&apos;s</span>
         </a>
       </div>
-      <label className="input input-bordered flex items-center h-9  w-auto gap-2">
-        <input type="text" className="grow" placeholder="Search" />
+      {/* TODO:Search field not working. next time work this field */}
+      <label className="input input-bordered flex items-center  w-auto ">
+        <input
+          type="text"
+          className="grow w-28 lg:w-auto"
+          placeholder="Search"
+        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"

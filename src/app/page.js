@@ -9,6 +9,7 @@ import Contactbtn from "@/components/button/contactbtn/Contactbtn";
 import { GoGoal } from "react-icons/go";
 import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const HomePage = () => {
   return (
@@ -106,6 +107,7 @@ const HomePage = () => {
           </h1>
           <Contact></Contact>
         </div>
+        <Footer />
       </div>
     </>
   );

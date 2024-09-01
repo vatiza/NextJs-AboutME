@@ -1,15 +1,26 @@
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 
 const Cards = ({ blog }) => {
-  const { title, postdate, description, img, _id } = blog;
+  const {
+    title,
+    postdate,
+    description,
+    img,
+    _id,
+    bloggerImg,
+    bloggerFirstName,
+    bloggerLastName,
+    emailAddresses,
+  } = blog;
 
   return (
     <div>
-      <div className="card card-compact bg-base-100 w-80 h-96 shadow-xl">
+      <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl">
         <figure>
           <Image
-            className="w-full h-48 object-cover"
+            className=" w-40 h-40 "
             width={400}
             height={400}
             src={img}
@@ -17,13 +28,40 @@ const Cards = ({ blog }) => {
           />
         </figure>
         <div className="card-body flex flex-col ">
-          <h2 className="card-title text-xl font-bold">
+          <h2 className=" text-xl font-bold hover:text-blue-500">
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
-          <p className="flex-grow text-sm overflow-hidden text-ellipsis">
-            {description}
+          <p className=" overflow-hidden text-ellipsis ">
+            {description.length > 80
+              ? `${description.slice(0, 80)}...`
+              : description}
           </p>
-          <p className="text-sm">Post: {postdate}</p>
+          <div className="divider -mt-2"></div>
+
+          <div className="flex items-center gap-2">
+            <div className="avatar">
+              <div className="w-12  rounded-full">
+                <Image
+                  width={20}
+                  height={20}
+                  src={bloggerImg}
+                  alt={bloggerFirstName}
+                ></Image>
+              </div>
+            </div>
+            <div>
+              <h1 className="font-semibold">
+                {bloggerFirstName} {bloggerLastName}
+              </h1>
+              <a
+                className="hover:text-warning"
+                href={`mailto:${emailAddresses}`}
+              >
+                {emailAddresses}
+              </a>
+              <p>{moment({ postdate }).format("LLL")}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

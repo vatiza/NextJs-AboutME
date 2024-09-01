@@ -2,7 +2,6 @@
 import getAxios from "@/utils/getAxios";
 import Image from "next/image";
 import Link from "next/link";
-
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
@@ -152,7 +151,7 @@ const AddBlogs = ({ user }) => {
               d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
             />
           </svg>
-        </button> 
+        </button>
       </div>
       <div>
         <div className="overflow-x-auto">
@@ -183,7 +182,7 @@ const AddBlogs = ({ user }) => {
                         </div>
                       </div>
                       <Link
-                        href="/"
+                        href={`/blogs/${blog._id}`}
                         className="hover:text-blue-700 hover:font-semibold"
                       >
                         <div className="font-bold">{blog.title}</div>
