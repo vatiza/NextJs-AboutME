@@ -3,7 +3,9 @@ import Link from "next/link";
 const Links = () => {
   return (
     <>
-      <Link href="/blogs">Blogs</Link>
+      <Link className="text-warning btn btn-outline btn-sm" href="/blogs">
+        Blogs
+      </Link>
     </>
   );
 };
