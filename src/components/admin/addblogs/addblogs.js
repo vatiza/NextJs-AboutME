@@ -55,6 +55,7 @@ const AddBlogs = ({ user }) => {
     ["clean"],
   ];
 
+  // eslint-disable-next-line @next/next/no-assign-module-variable
   const module = {
     toolbar: toolbarOptions,
   };
