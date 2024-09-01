@@ -1,6 +1,10 @@
 import AddBlogs from "@/components/admin/addblogs/addblogs";
+import getUser from "@/utils/getUser";
 
-const AddBlogsPage = () => {
+const AddBlogsPage = async () => {
+  const user = await getUser();
+  const plainUser = user ? JSON.parse(JSON.stringify(user)) : null;
+
   return (
     <div className="mt-20">
       <h1 className="text-warning text-3xl font-bold flex items-center">
@@ -21,7 +25,7 @@ const AddBlogsPage = () => {
         </svg>
       </h1>
       <div className="mt-3">
-        <AddBlogs />
+        <AddBlogs user={plainUser} />
       </div>
     </div>
   );

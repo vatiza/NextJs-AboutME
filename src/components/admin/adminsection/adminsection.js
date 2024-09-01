@@ -4,7 +4,6 @@ import Link from "next/link";
 const AdminSection = async () => {
   const { userId } = auth();
   const user = await currentUser();
-  console.log(user.firstName);
   return (
     <div className="mt-32 sticky top-32">
       <div className="flex flex-col items-center">

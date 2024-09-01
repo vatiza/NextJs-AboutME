@@ -1,12 +1,15 @@
 "use client";
 import getAxios from "@/utils/getAxios";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 
 const img_hosting_key = process.env.NEXT_PUBLIC_IMG_HOSTING_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
-const AddBlogs = () => {
+const AddBlogs = ({ user }) => {
+  const emailAddresses = user.emailAddresses[0].emailAddress;
+  const bloggerPhoto = user.imageUrl;
   const [isLoading, setIsLoading] = useState(false);
   const axiosPost = getAxios();
   const {
@@ -31,6 +34,10 @@ const AddBlogs = () => {
         description: data.description,
         img: res.data.data.display_url,
         postdate: new Date(),
+        bloggerFirstName: user.firstName,
+        bloggerLastName: user.lastName,
+        emailAddresses: emailAddresses,
+        bloggerImg: bloggerPhoto,
       };
       const postBlogs = await axiosPost.post("/blogs", blogsDetails);
       console.log(postBlogs.data);
