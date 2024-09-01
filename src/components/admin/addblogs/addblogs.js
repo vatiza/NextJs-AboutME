@@ -3,11 +3,14 @@ import getAxios from "@/utils/getAxios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
+import ReactQuill from "react-quill";
 import Swal from "sweetalert2";
 
-const img_hosting_key = process.env.NEXT_PUBLIC_IMG_HOSTING_KEY;
+import "../../../../node_modules/react-quill/dist/quill.snow.css";
+
+const img_hosting_key = process.env.IMG_HOSTING_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
 const AddBlogs = ({ user }) => {
   const axiosPublic = getAxios();
@@ -30,10 +33,31 @@ const AddBlogs = ({ user }) => {
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
+    control,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm();
+  const toolbarOptions = [
+    [{ size: ["small", false, "large", "huge"] }],
+    [{ font: [] }],
+    ["bold", "italic", "underline", "strike"],
+    ["blockquote", "code-block"],
+    ["link", "formula"],
+    [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
+    [{ indent: "-1" }, { indent: "+1" }],
+    [{ direction: "rtl" }],
+
+    [{ color: [] }, { background: [] }],
+
+    [{ align: [] }],
+
+    ["clean"],
+  ];
+
+  const module = {
+    toolbar: toolbarOptions,
+  };
 
   const onSubmit = async (data) => {
     const imageFile = { image: data.image[0] };
@@ -112,21 +136,38 @@ const AddBlogs = ({ user }) => {
         {errors.title?.type === "required" && (
           <p className="text-red-700">Required</p>
         )}
-        <textarea
+
+        <div className="my-5 rounded-md bg-white  ">
+          <Controller
+            name="description"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <ReactQuill
+                {...field}
+                modules={module}
+                theme="snow"
+                onChange={field.onChange}
+              />
+            )}
+          />
+        </div>
+
+        {/* <textarea
           className="textarea textarea-warning w-full  my-3"
           placeholder="Description "
           {...register("description", { required: "Required" })}
         ></textarea>
         {errors.description?.type === "required" && (
           <p className="text-red-700">Required</p>
-        )}
+        )} */}
         <input
           type="file"
-          className="file-input file-input-bordered file-input-warning w-full max-w-xs"
+          className="file-input file-input-bordered file-input-warning w-full mt-5 max-w-xs"
           {...register("image", { required: "Required" })}
         />
         <div className="mt-7 ">
-          <input value="Post" type="submit" className="btn btn-success"></input>
+          <input value="Post" type="submit" className="btn btn-warning"></input>
         </div>
       </form>
       <div className="divider py-5"></div>

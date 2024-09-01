@@ -1,6 +1,7 @@
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import parse from "html-react-parser";
 
 const Cards = ({ blog }) => {
   const {
@@ -31,10 +32,13 @@ const Cards = ({ blog }) => {
           <h2 className=" text-xl font-bold hover:text-blue-500">
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
+
           <p className=" overflow-hidden text-ellipsis ">
-            {description.length > 80
-              ? `${description.slice(0, 80)}...`
-              : description}
+            {parse(
+              description.length > 80
+                ? `${description.slice(0, 80)}...`
+                : description
+            )}
           </p>
           <div className="divider -mt-2"></div>
 
