@@ -1,15 +1,15 @@
+import AdminNavbar from "@/components/admin/adminnav/AdminNavbar";
 import AdminSection from "@/components/admin/adminsection/adminsection";
-import { UserButton } from "@clerk/nextjs";
 
 const layout = ({ children }) => {
   return (
-    <div className=" h-screen max-h-svh grid grid-cols-2 ">
-      <div className="grid grid-cols-2">
-        <div>
-          <UserButton />
-          {/* <AdminSection /> */}
+    <div className="">
+      <AdminNavbar />
+      <div className="grid grid-cols-4 gap-3">
+        <div className="col-span-1">
+          <AdminSection />
         </div>
-        <div>{children}</div>
+        <div className="col-span-3">{children}</div>
       </div>
     </div>
   );

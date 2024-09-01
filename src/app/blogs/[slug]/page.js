@@ -10,12 +10,7 @@ const detailsPage = async ({ params }) => {
     <div className="mt-20 flex justify-center">
       <div className="card card-compact bg-base-100 w-96 shadow-xl">
         <figure>
-          <Image
-            width={400}
-            height={400}
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt={title}
-          />
+          <Image width={400} height={400} src={img} alt={title} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
