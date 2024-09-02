@@ -28,7 +28,13 @@ const detailsPage = async ({ params }) => {
         <div className=" flex justify-center ">
           <div>
             <figure>
-              <Image width={400} height={400} src={img} alt={title} />
+              <Image
+                width={400}
+                height={400}
+                priority="false"
+                src={img}
+                alt={title}
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">{title}</h2>

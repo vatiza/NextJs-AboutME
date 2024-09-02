@@ -14,6 +14,7 @@ const Cards = ({ blog }) => {
     bloggerLastName,
     emailAddresses,
   } = blog;
+  console.log(img);
   const descriptionSlice =
     description.length > 100 ? description.slice(0, 100) : description;
 
@@ -25,6 +26,7 @@ const Cards = ({ blog }) => {
             className=" w-40 h-40 "
             width={400}
             height={400}
+            priority="false"
             src={img}
             alt={title}
           />
