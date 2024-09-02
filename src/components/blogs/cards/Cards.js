@@ -1,11 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
-<<<<<<< HEAD
-
-=======
-import "../../../../node_modules/react-quill/dist/quill.snow.css";
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 const Cards = ({ blog }) => {
   const {
     title,
@@ -32,7 +27,6 @@ const Cards = ({ blog }) => {
             height={400}
             priority="false"
             src={blog?.img}
-           
             alt={title}
           />
         </figure>
@@ -41,17 +35,11 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
 
-<<<<<<< HEAD
           <p className=" overflow-hidden text-ellipsis ">
             {description.length > 80
               ? `${description.slice(0, 80)}...`
               : description}
           </p>
-=======
-          <div className=" overflow-hidden text-ellipsis h-10 ">
-            <div dangerouslySetInnerHTML={{ __html: descriptionSlice }} />
-          </div>
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
           <div className="divider -mt-2"></div>
 
           <div className="flex items-center gap-2">

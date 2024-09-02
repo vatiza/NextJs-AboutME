@@ -1,11 +1,6 @@
 import getSingleBlogs from "@/utils/getSingleBlogs";
 import moment from "moment";
 import Image from "next/image";
-<<<<<<< HEAD
-
-=======
-import "../../../../node_modules/react-quill/dist/quill.snow.css";
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 const detailsPage = async ({ params }) => {
   const blog = await getSingleBlogs(params.slug);
 
@@ -14,10 +9,6 @@ const detailsPage = async ({ params }) => {
     postdate,
     description,
     img,
-<<<<<<< HEAD
-
-=======
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
     bloggerImg,
     bloggerFirstName,
     bloggerLastName,
@@ -46,11 +37,7 @@ const detailsPage = async ({ params }) => {
             </figure>
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">{title}</h2>
-<<<<<<< HEAD
               <p>{description}</p>
-=======
-              <div dangerouslySetInnerHTML={{ __html: description }} />
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
             </div>
             <div className="divider"></div>
             <div className="flex items-center gap-2 mb-5 ">

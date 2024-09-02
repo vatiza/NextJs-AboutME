@@ -140,11 +140,7 @@ const AddBlogs = ({ user }) => {
           <p className="text-red-700">Required</p>
         )}
 
-<<<<<<< HEAD
         <div className="my-5 ">
-=======
-        <div className="my-5 rounded-md  ">
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
           <Controller
             name="description"
             control={control}
@@ -170,10 +166,7 @@ const AddBlogs = ({ user }) => {
         </div>
       </form>
       <div className="divider py-5"></div>
-<<<<<<< HEAD
       {/* Table */}
-=======
->>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 
       <div>
         <div className="overflow-x-auto">
