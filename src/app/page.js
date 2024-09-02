@@ -1,15 +1,15 @@
 import Image from "next/image";
-import profileImg from "@/assets/img/portfolio.png";
-import aboutImg from "@/assets/img/aboutPhoto.jpg";
-import Skills from "@/components/skills/Skills";
-import Projects from "@/components/projects/Projects";
-import Contact from "@/components/contact/Contact";
+import profileImg from "../assets/img/portfolio.png";
+import aboutImg from "../assets/img/aboutPhoto.jpg";
+import Skills from "../components/skills/Skills";
+import Projects from "../components/projects/Projects";
+import Contact from "../components/contact/Contact";
 import { PiStudent } from "react-icons/pi";
-import Contactbtn from "@/components/button/contactbtn/Contactbtn";
+import Contactbtn from "../components/button/contactbtn/Contactbtn";
 import { GoGoal } from "react-icons/go";
 import Link from "next/link";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 const HomePage = () => {
   return (

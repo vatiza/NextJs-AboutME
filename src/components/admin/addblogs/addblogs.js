@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import getAxios from "@/utils/getAxios";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import "../../../../node_modules/react-quill/dist/quill.snow.css";
+import getAxios from "../../../utils/getAxios";
 
 const img_hosting_key = process.env.NEXT_PUBLIC_IMG_HOSTING_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;

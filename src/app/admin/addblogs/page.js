@@ -1,6 +1,5 @@
-import AddBlogs from "@/components/admin/addblogs/addblogs";
-import getUser from "@/utils/getUser";
-
+import AddBlogs from "../../../components/admin/addblogs/addblogs";
+import getUser from "../../../utils/getUser";
 const AddBlogsPage = async () => {
   const user = await getUser();
   const plainUser = user ? JSON.parse(JSON.stringify(user)) : null;

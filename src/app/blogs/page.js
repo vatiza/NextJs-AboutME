@@ -1,4 +1,4 @@
-import LoadBlogs from "@/components/blogs/loadBlogs/LoadBlogs";
+import LoadBlogs from "../../components/blogs/loadBlogs/LoadBlogs";
 
 const BlogsPage = () => {
   return (

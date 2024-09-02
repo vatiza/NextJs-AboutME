@@ -1,5 +1,5 @@
 "use client";
-import Links from "@/links/Links";
+import Links from "../../links/Links";
 import { usePathname } from "next/navigation";
 import { Link } from "react-scroll";
 

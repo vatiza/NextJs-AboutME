@@ -1,4 +1,4 @@
-import getSingleBlogs from "@/utils/getSingleBlogs";
+import getSingleBlogs from "../../../utils/getSingleBlogs";
 import moment from "moment";
 import Image from "next/image";
 const detailsPage = async ({ params }) => {

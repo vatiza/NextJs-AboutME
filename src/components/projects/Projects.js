@@ -1,4 +1,4 @@
-import rafsanMock from "@/assets/img/rafsanmock.png";
+import rafsanMock from "../../assets/img/rafsanmock.png";
 import Image from "next/image";
 import RafsanTravels from "../client/RafsanTravels";
 

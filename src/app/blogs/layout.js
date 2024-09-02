@@ -1,4 +1,4 @@
-import BlogNavbar from "@/components/blogs/navbar/BlogNavbar";
+import BlogNavbar from "../../components/blogs/navbar/BlogNavbar";
 
 export const metadata = {
   title: "Blogs",

@@ -35,7 +35,7 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
 
-          <div className=" overflow-hidden text-ellipsis ">
+          <div className=" overflow-hidden text-ellipsis h-12  ">
             <div dangerouslySetInnerHTML={{ __html: descriptionSlice }} />
           </div>
           <div className="divider -mt-2"></div>

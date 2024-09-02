@@ -1,5 +1,5 @@
 "use client";
-import contactAnimation from "@/assets/svg/contact.json";
+import contactAnimation from "../../assets/svg/contact.json";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";

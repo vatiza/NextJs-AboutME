@@ -1,5 +1,5 @@
-import AdminNavbar from "@/components/admin/adminnav/AdminNavbar";
-import AdminSection from "@/components/admin/adminsection/adminsection";
+import AdminNavbar from "../../components/admin/adminnav/AdminNavbar";
+import AdminSection from "../../components/admin/adminsection/adminsection";
 
 const layout = ({ children }) => {
   return (
