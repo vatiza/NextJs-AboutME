@@ -26,7 +26,7 @@ const Cards = ({ blog }) => {
             width={400}
             height={400}
             priority="false"
-            src="https://i.ibb.co/gmghj0h/png-transparent.png"
+            src={img}
             alt={title}
           />
         </figure>
