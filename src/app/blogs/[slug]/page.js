@@ -31,13 +31,13 @@ const detailsPage = async ({ params }) => {
                 width={400}
                 height={400}
                 priority="false"
-                src={img}
+                src="https://i.ibb.co/gmghj0h/png-transparent.png"
                 alt={title}
               />
             </figure>
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">{title}</h2>
-              <p>{description}</p>
+              <div dangerouslySetInnerHTML={{ __html: description }} />
             </div>
             <div className="divider"></div>
             <div className="flex items-center gap-2 mb-5 ">

@@ -1,8 +1,7 @@
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 const AdminSection = async () => {
-  const { userId } = auth();
   const user = await currentUser();
   const emailAddresses = user.emailAddresses[0].emailAddress;
   return (

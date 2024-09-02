@@ -3,7 +3,7 @@ import AdminSection from "@/components/admin/adminsection/adminsection";
 
 const layout = ({ children }) => {
   return (
-    <div className="">
+    <div>
       <AdminNavbar />
       <div className="grid grid-cols-4 gap-3">
         <div className="col-span-1">

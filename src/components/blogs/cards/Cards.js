@@ -26,7 +26,7 @@ const Cards = ({ blog }) => {
             width={400}
             height={400}
             priority="false"
-            src={blog?.img}
+            src="https://i.ibb.co/gmghj0h/png-transparent.png"
             alt={title}
           />
         </figure>
@@ -35,11 +35,9 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
 
-          <p className=" overflow-hidden text-ellipsis ">
-            {description.length > 80
-              ? `${description.slice(0, 80)}...`
-              : description}
-          </p>
+          <div className=" overflow-hidden text-ellipsis ">
+            <div dangerouslySetInnerHTML={{ __html: descriptionSlice }} />
+          </div>
           <div className="divider -mt-2"></div>
 
           <div className="flex items-center gap-2">
