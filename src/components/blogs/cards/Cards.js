@@ -1,8 +1,7 @@
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
-import parse from "html-react-parser";
-
+import "../../../../node_modules/react-quill/dist/quill.snow.css";
 const Cards = ({ blog }) => {
   const {
     title,
@@ -15,10 +14,12 @@ const Cards = ({ blog }) => {
     bloggerLastName,
     emailAddresses,
   } = blog;
+  const descriptionSlice =
+    description.length > 100 ? description.slice(0, 100) : description;
 
   return (
-    <div>
-      <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl">
+    <div className="">
+      <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl m-3 lg:mx-auto ">
         <figure>
           <Image
             className=" w-40 h-40 "
@@ -33,13 +34,9 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
 
-          <p className=" overflow-hidden text-ellipsis ">
-            {parse(
-              description.length > 80
-                ? `${description.slice(0, 80)}...`
-                : description
-            )}
-          </p>
+          <div className=" overflow-hidden text-ellipsis h-10 ">
+            <div dangerouslySetInnerHTML={{ __html: descriptionSlice }} />
+          </div>
           <div className="divider -mt-2"></div>
 
           <div className="flex items-center gap-2">
@@ -63,7 +60,7 @@ const Cards = ({ blog }) => {
               >
                 {emailAddresses}
               </a>
-              <p>{moment({ postdate }).format("LLL")}</p>
+              <p>{moment({ postdate }).format("LL")}</p>
             </div>
           </div>
         </div>
