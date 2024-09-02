@@ -1,7 +1,11 @@
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
 
+=======
+import "../../../../node_modules/react-quill/dist/quill.snow.css";
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 const Cards = ({ blog }) => {
   const {
     title,
@@ -14,16 +18,21 @@ const Cards = ({ blog }) => {
     bloggerLastName,
     emailAddresses,
   } = blog;
+  console.log(img);
+  const descriptionSlice =
+    description.length > 100 ? description.slice(0, 100) : description;
 
   return (
     <div>
-      <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl">
+      <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl m-3 lg:mx-auto ">
         <figure>
           <Image
             className=" w-40 h-40 "
             width={400}
             height={400}
-            src={img}
+            priority="false"
+            src={blog?.img}
+           
             alt={title}
           />
         </figure>
@@ -32,11 +41,17 @@ const Cards = ({ blog }) => {
             <Link href={`/blogs/${_id}`}>{title}</Link>
           </h2>
 
+<<<<<<< HEAD
           <p className=" overflow-hidden text-ellipsis ">
             {description.length > 80
               ? `${description.slice(0, 80)}...`
               : description}
           </p>
+=======
+          <div className=" overflow-hidden text-ellipsis h-10 ">
+            <div dangerouslySetInnerHTML={{ __html: descriptionSlice }} />
+          </div>
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
           <div className="divider -mt-2"></div>
 
           <div className="flex items-center gap-2">
@@ -60,7 +75,7 @@ const Cards = ({ blog }) => {
               >
                 {emailAddresses}
               </a>
-              <p>{moment({ postdate }).format("LLL")}</p>
+              <p>{moment({ postdate }).format("LL")}</p>
             </div>
           </div>
         </div>

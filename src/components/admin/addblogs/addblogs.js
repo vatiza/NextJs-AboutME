@@ -1,17 +1,19 @@
 "use client";
+import dynamic from "next/dynamic";
 import getAxios from "@/utils/getAxios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import ReactQuill from "react-quill";
 import Swal from "sweetalert2";
-
 import "../../../../node_modules/react-quill/dist/quill.snow.css";
 
 const img_hosting_key = process.env.NEXT_PUBLIC_IMG_HOSTING_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
 const AddBlogs = ({ user }) => {
   const axiosPublic = getAxios();
   const [blogs, setBlogs] = useState(null);
@@ -38,6 +40,7 @@ const AddBlogs = ({ user }) => {
     handleSubmit,
     reset,
   } = useForm();
+
   const toolbarOptions = [
     [{ size: ["small", false, "large", "huge"] }],
     [{ font: [] }],
@@ -47,11 +50,8 @@ const AddBlogs = ({ user }) => {
     [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
     [{ indent: "-1" }, { indent: "+1" }],
     [{ direction: "rtl" }],
-
     [{ color: [] }, { background: [] }],
-
     [{ align: [] }],
-
     ["clean"],
   ];
 
@@ -81,7 +81,7 @@ const AddBlogs = ({ user }) => {
         bloggerImg: bloggerPhoto,
       };
       const postBlogs = await axiosPublic.post("/blogs", blogsDetails);
-      console.log(postBlogs.data);
+
       if (postBlogs.data.insertedId) {
         toast.dismiss(loadingToastId);
         toast.success("Success!");
@@ -93,6 +93,7 @@ const AddBlogs = ({ user }) => {
       toast.error("Something Wrong, Try Again!");
     }
   };
+
   const handleDeleteBlog = (blog) => {
     Swal.fire({
       title: "Are you sure?",
@@ -125,6 +126,7 @@ const AddBlogs = ({ user }) => {
         <span className="loading loading-spinner text-warning"></span>
       </div>
     );
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -138,7 +140,11 @@ const AddBlogs = ({ user }) => {
           <p className="text-red-700">Required</p>
         )}
 
+<<<<<<< HEAD
         <div className="my-5 ">
+=======
+        <div className="my-5 rounded-md  ">
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
           <Controller
             name="description"
             control={control}
@@ -154,14 +160,6 @@ const AddBlogs = ({ user }) => {
           />
         </div>
 
-        {/* <textarea
-          className="textarea textarea-warning w-full  my-3"
-          placeholder="Description "
-          {...register("description", { required: "Required" })}
-        ></textarea>
-        {errors.description?.type === "required" && (
-          <p className="text-red-700">Required</p>
-        )} */}
         <input
           type="file"
           className="file-input file-input-bordered file-input-warning w-full mt-5 max-w-xs"
@@ -172,7 +170,10 @@ const AddBlogs = ({ user }) => {
         </div>
       </form>
       <div className="divider py-5"></div>
+<<<<<<< HEAD
       {/* Table */}
+=======
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 
       <div>
         <div className="overflow-x-auto">
@@ -199,7 +200,7 @@ const AddBlogs = ({ user }) => {
                             width={20}
                             height={20}
                             alt={blog.title}
-                          ></Image>
+                          />
                         </div>
                       </div>
                       <Link

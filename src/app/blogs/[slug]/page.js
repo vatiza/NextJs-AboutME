@@ -1,7 +1,11 @@
 import getSingleBlogs from "@/utils/getSingleBlogs";
 import moment from "moment";
 import Image from "next/image";
+<<<<<<< HEAD
 
+=======
+import "../../../../node_modules/react-quill/dist/quill.snow.css";
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
 const detailsPage = async ({ params }) => {
   const blog = await getSingleBlogs(params.slug);
 
@@ -10,7 +14,10 @@ const detailsPage = async ({ params }) => {
     postdate,
     description,
     img,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
     bloggerImg,
     bloggerFirstName,
     bloggerLastName,
@@ -29,14 +36,24 @@ const detailsPage = async ({ params }) => {
         <div className=" flex justify-center ">
           <div>
             <figure>
-              <Image width={400} height={400} src={img} alt={title} />
+              <Image
+                width={400}
+                height={400}
+                priority="false"
+                src={img}
+                alt={title}
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">{title}</h2>
+<<<<<<< HEAD
               <p>{description}</p>
+=======
+              <div dangerouslySetInnerHTML={{ __html: description }} />
+>>>>>>> 526685439a730ead5570da23e30d96183dcbcf2f
             </div>
             <div className="divider"></div>
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2 mb-5 ">
               <div className="avatar">
                 <div className="w-12  rounded-full">
                   <Image
@@ -57,7 +74,7 @@ const detailsPage = async ({ params }) => {
                 >
                   {emailAddresses}
                 </a>
-                <p className="">{moment({ postdate }).format("LLL")}</p>
+                <p className="">{moment({ postdate }).format("LL")}</p>
               </div>
             </div>
           </div>

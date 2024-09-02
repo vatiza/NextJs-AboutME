@@ -37,9 +37,9 @@ const BlogNavbar = () => {
             {navOption}
           </ul>
         </div>
-        <a href="/" className="font-bold text-2xl">
+        <Link href="/blogs" className="font-bold text-2xl">
           Blog<span className="text-warning">&apos;s</span>
-        </a>
+        </Link>
       </div>
       {/* TODO:Search field not working. next time work this field */}
       <label className="input input-bordered flex items-center  w-auto ">
