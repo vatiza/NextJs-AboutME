@@ -1,7 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
-import parse from "html-react-parser";
 
 const Cards = ({ blog }) => {
   const {
@@ -34,11 +33,9 @@ const Cards = ({ blog }) => {
           </h2>
 
           <p className=" overflow-hidden text-ellipsis ">
-            {parse(
-              description.length > 80
-                ? `${description.slice(0, 80)}...`
-                : description
-            )}
+            {description.length > 80
+              ? `${description.slice(0, 80)}...`
+              : description}
           </p>
           <div className="divider -mt-2"></div>
 

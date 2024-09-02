@@ -1,7 +1,7 @@
 import getSingleBlogs from "@/utils/getSingleBlogs";
 import moment from "moment";
 import Image from "next/image";
-import parse from "html-react-parser";
+
 const detailsPage = async ({ params }) => {
   const blog = await getSingleBlogs(params.slug);
 
@@ -10,7 +10,7 @@ const detailsPage = async ({ params }) => {
     postdate,
     description,
     img,
-  
+
     bloggerImg,
     bloggerFirstName,
     bloggerLastName,
@@ -33,7 +33,7 @@ const detailsPage = async ({ params }) => {
             </figure>
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">{title}</h2>
-              <p>{parse(description)}</p>
+              <p>{description}</p>
             </div>
             <div className="divider"></div>
             <div className="flex items-center gap-2 mb-5">
