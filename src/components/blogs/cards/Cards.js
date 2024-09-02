@@ -19,7 +19,7 @@ const Cards = ({ blog }) => {
     description.length > 100 ? description.slice(0, 100) : description;
 
   return (
-    <div className="">
+    <div>
       <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl m-3 lg:mx-auto ">
         <figure>
           <Image
@@ -27,7 +27,8 @@ const Cards = ({ blog }) => {
             width={400}
             height={400}
             priority="false"
-            src={img}
+            src={blog?.img}
+           
             alt={title}
           />
         </figure>
