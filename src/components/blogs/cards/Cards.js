@@ -22,7 +22,6 @@ const Cards = ({ blog }) => {
       <div className="card card-compact bg-base-100 w-96 h-96 shadow-xl m-3 lg:mx-auto ">
         <figure>
           <Image
-            className=" w-40 h-40 "
             width={400}
             height={400}
             priority="false"

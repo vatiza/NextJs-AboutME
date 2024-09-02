@@ -1,6 +1,9 @@
 import AdminNavbar from "../../components/admin/adminnav/AdminNavbar";
 import AdminSection from "../../components/admin/adminsection/adminsection";
-
+export const metadata = {
+  title: "Admin Page",
+  description: "Admin on portfolio ",
+};
 const layout = ({ children }) => {
   return (
     <div>

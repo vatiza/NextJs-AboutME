@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Admin | Dashboard",
+  description: "Blogs ",
+};
 const adminPage = async () => {
   return (
     <div className="mt-20">

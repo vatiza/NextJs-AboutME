@@ -1,5 +1,11 @@
 import AddBlogs from "../../../components/admin/addblogs/addblogs";
 import getUser from "../../../utils/getUser";
+
+export const metadata = {
+  title: "Post New Blogs",
+  description: "New Blogs ",
+};
+
 const AddBlogsPage = async () => {
   const user = await getUser();
   const plainUser = user ? JSON.parse(JSON.stringify(user)) : null;

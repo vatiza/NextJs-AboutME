@@ -9,6 +9,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import "../../../../node_modules/react-quill/dist/quill.snow.css";
 import getAxios from "../../../utils/getAxios";
+import moment from "moment";
 
 const img_hosting_key = process.env.NEXT_PUBLIC_IMG_HOSTING_KEY;
 const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
@@ -203,7 +204,7 @@ const AddBlogs = ({ user }) => {
                       >
                         <div className="font-bold">{blog.title}</div>
                         <div className="text-sm opacity-50">
-                          {blog?.postdate}
+                          {moment(blog?.postdate).format("lll")}
                         </div>
                       </Link>
                     </div>
