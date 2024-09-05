@@ -73,7 +73,7 @@ const detailsPage = async ({ params }) => {
                   >
                     {emailAddresses}
                   </a>
-                  <p className="">{moment({ postdate }).format("LL")}</p>
+                  <p className="">{moment(postdate).format("LL")}</p>
                 </div>
               </div>
               <div>

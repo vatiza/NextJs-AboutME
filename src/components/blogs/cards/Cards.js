@@ -60,7 +60,7 @@ const Cards = ({ blog }) => {
               >
                 {emailAddresses}
               </a>
-              <p>{moment({ postdate }).format("LL")}</p>
+              <p>{moment(postdate).format("LL")}</p>
             </div>
           </div>
         </div>
