@@ -13,7 +13,7 @@ const Cards = ({ blog }) => {
     bloggerLastName,
     emailAddresses,
   } = blog;
-  console.log(img);
+
   const descriptionSlice =
     description.length > 100 ? description.slice(0, 100) : description;
 
@@ -39,29 +39,8 @@ const Cards = ({ blog }) => {
           </div>
           <div className="divider -mt-2"></div>
 
-          <div className="flex items-center gap-2">
-            <div className="avatar">
-              <div className="w-12  rounded-full">
-                <Image
-                  width={20}
-                  height={20}
-                  src={bloggerImg}
-                  alt={bloggerFirstName}
-                ></Image>
-              </div>
-            </div>
-            <div>
-              <h1 className="font-semibold">
-                {bloggerFirstName} {bloggerLastName}
-              </h1>
-              <a
-                className="hover:text-warning"
-                href={`mailto:${emailAddresses}`}
-              >
-                {emailAddresses}
-              </a>
-              <p>{moment(postdate).format("LL")}</p>
-            </div>
+          <div>
+            <p>{moment(postdate).format("LL")}</p>
           </div>
         </div>
       </div>
