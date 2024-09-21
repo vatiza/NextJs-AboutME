@@ -1,15 +1,15 @@
 import Image from "next/image";
-import profileImg from "../assets/img/portfolio.png";
-import aboutImg from "../assets/img/aboutPhoto.jpg";
-import Skills from "../components/skills/Skills";
-import Projects from "../components/projects/Projects";
-import Contact from "../components/contact/Contact";
-import { PiStudent } from "react-icons/pi";
-import Contactbtn from "../components/button/contactbtn/Contactbtn";
-import { GoGoal } from "react-icons/go";
 import Link from "next/link";
-import Navbar from "../components/navbar/Navbar";
+import { GoGoal } from "react-icons/go";
+import { PiStudent } from "react-icons/pi";
+import aboutImg from "../assets/img/aboutPhoto.jpg";
+import profileImg from "../assets/img/portfolio.png";
+import Contactbtn from "../components/button/contactbtn/Contactbtn";
+import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
+import Projects from "../components/projects/Projects";
+import Skills from "../components/skills/Skills";
 
 const HomePage = () => {
   return (
@@ -79,7 +79,7 @@ const HomePage = () => {
               abilities in my professional work.
             </p>
             <Link
-              href="https://drive.google.com/file/d/1EC-laEEnXHfr42TO8Cj694RR6ECdUNQH/view?usp=sharing"
+              href="https://drive.google.com/file/d/19620R29Vecs2J97WVLJVGQ0HhE_M2Bxz/view?usp=sharing"
               className="btn btn-warning btn-sm mt-2"
             >
               Resume

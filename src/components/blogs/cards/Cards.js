@@ -2,17 +2,7 @@ import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 const Cards = ({ blog }) => {
-  const {
-    title,
-    postdate,
-    description,
-    img,
-    _id,
-    bloggerImg,
-    bloggerFirstName,
-    bloggerLastName,
-    emailAddresses,
-  } = blog;
+  const { title, postdate, description, img, _id } = blog;
 
   const descriptionSlice =
     description.length > 100 ? description.slice(0, 100) : description;
