@@ -79,7 +79,7 @@ const HomePage = () => {
               abilities in my professional work.
             </p>
             <Link
-              href="https://drive.google.com/file/d/19620R29Vecs2J97WVLJVGQ0HhE_M2Bxz/view?usp=sharing"
+              href="https://drive.google.com/file/d/16DlhjFQJ_gts3iCa8wLUgr-q-Mu2kc8u/view?usp=sharing"
               className="btn btn-warning btn-sm mt-2"
             >
               Resume
