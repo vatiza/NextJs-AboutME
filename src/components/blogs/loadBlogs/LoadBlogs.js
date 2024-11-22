@@ -10,7 +10,7 @@ const LoadBlogs = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/blogs?order=${order}&search=${search}`
+          `https://vatiza-portfolio.vercel.appblogs?order=${order}&search=${search}`
         );
         const data = await res.json();
         setBlogs(data);

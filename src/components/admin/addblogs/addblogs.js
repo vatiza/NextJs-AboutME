@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
-import "../../../../node_modules/react-quill/dist/quill.snow.css";
+import "./quill.snow.css";
 import getAxios from "../../../utils/getAxios";
 import moment from "moment";
 
@@ -17,12 +17,17 @@ const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const AddBlogs = ({ user }) => {
+  console.log(user.emailAddresses[0].emailAddress);
+  const emailAddresses = user.emailAddresses[0].emailAddress;
   const axiosPublic = getAxios();
   const [blogs, setBlogs] = useState(null);
 
   const fetchData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/blogs");
+      const email = emailAddresses || "";
+      const res = await fetch(
+        `https://vatiza-portfolio.vercel.appblogs?email=${email}`
+      );
       const data = await res.json();
       setBlogs(data);
     } catch (error) {
@@ -32,7 +37,7 @@ const AddBlogs = ({ user }) => {
   useEffect(() => {
     fetchData();
   }, []);
-  const emailAddresses = user.emailAddresses[0].emailAddress;
+
   const bloggerPhoto = user.imageUrl;
   const [isLoading, setIsLoading] = useState(false);
   const {
