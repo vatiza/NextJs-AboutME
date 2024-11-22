@@ -22,7 +22,7 @@ const AddBlogs = ({ user }) => {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://vatiza-portfolio.vercel.app/blogs");
+      const res = await fetch("http://localhost:5000/blogs");
       const data = await res.json();
       setBlogs(data);
     } catch (error) {

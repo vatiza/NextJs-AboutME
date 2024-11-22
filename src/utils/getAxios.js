@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-  baseURL: "https://vatiza-portfolio.vercel.app",
+  //http://localhost:5000
+  baseURL: "http://localhost:5000/",
 });
 const getAxios = () => {
   return axiosPublic;

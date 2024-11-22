@@ -1,5 +1,5 @@
 const getSingleBlogs = async (slug) => {
-  const res = await fetch(`https://vatiza-portfolio.vercel.app/blogs/${slug}`);
+  const res = await fetch(`http://localhost:5000/blogs/${slug}`);
   if (!res.ok) {
     return null;
   }
